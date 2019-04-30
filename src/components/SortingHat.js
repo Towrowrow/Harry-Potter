@@ -10,9 +10,7 @@ class SortingHat extends React.Component {
     }
   }
 
-  sorting = () => console.log(randomizer());
-
-
+  sorting = () => console.log(randomizer);
   render() {
     return (
       <div>

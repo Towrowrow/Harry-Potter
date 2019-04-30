@@ -4,3 +4,5 @@ const getRandomHouse = () => {
   return houses[number];
 }
 
+export default getRandomHouse;
+
