@@ -1,5 +1,6 @@
 import React from "react";
 import CharactersList from "./CharactersList"
+import SortingHat from "./SortingHat";
 
 
 class Home extends React.Component {
@@ -14,6 +15,7 @@ class Home extends React.Component {
     return (
       <div>
         <CharactersList />
+        <SortingHat />
       </div>
 
     );
