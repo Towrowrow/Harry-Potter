@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-// import SweetAlert from 'sweetalert2-react';
 import Capitzalize from '../functions/Capitalize';
 
 class CharactersList extends React.Component {
@@ -9,23 +8,34 @@ class CharactersList extends React.Component {
     this.state = {
       charactersList: "",
       show: false,
+      house: "gryffindor",
     }
-
+    this.getCharactersLists = this.getCharactersLists.bind(this);
+    this.chooseYourhouse = this.chooseYourhouse.bind(this);
   }
-  componentDidMount() {
+
+  chooseYourhouse(maison) {
+    this.setState({ house: maison });
     this.getCharactersLists();
   }
 
   getCharactersLists() {
 
-    axios.get(`http://hp-api.herokuapp.com/api/characters`)
+    axios.get(`http://hp-api.herokuapp.com/api/characters/house/gryffindor`)
       .then(response => (response.data))
       .then(data => this.setState({ charactersList: data }))
   };
 
   render() {
+
+
     return (
       <div>
+
+        <img onClick={() => this.chooseYourhouse("gryffindor")} src="https://www.encyclopedie-hp.org/wp-content/uploads/sites/4/2016/08/shield_gry.gif" alt="gryffindor" />
+
+
+
 
         {this.state.charactersList
           &&
@@ -40,14 +50,9 @@ class CharactersList extends React.Component {
                 <p>Ascendance : {character.ancestry}</p>
                 <p>Baguette magique : {Capitzalize(character.wand.wood)}, {Capitzalize(character.wand.core)}, {Number(character.wand.length) * 2.54} cm</p>
                 <p>Patronus : {Capitzalize(character.patronus)}</p>
+                <p>Age : {2019 - Number(character.yearOfBirth)} ans</p>
 
-                {/* <button onClick={() => this.setState({ show: true })}>See the starship</button>
-                <SweetAlert
-                  show={this.state.show}
-                  title="STARSHIPS"
-                  text={character.starships}
-                  onConfirm={() => this.setState({ show: false })}
-                /> */}
+
 
 
                 <br />
