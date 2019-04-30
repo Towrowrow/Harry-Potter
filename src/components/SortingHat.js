@@ -1,5 +1,5 @@
 import React from 'react';
-import randomizer from '../functions/randomizer.js'
+import getRandomHouse from '../functions/randomizer.js'
 
 class SortingHat extends React.Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class SortingHat extends React.Component {
     }
   }
 
-  sorting = () => console.log(randomizer());
+  sorting = () => alert("Felicitation tu es admis à " + getRandomHouse());
 
 
   render() {
@@ -21,7 +21,7 @@ class SortingHat extends React.Component {
           src="https://images.pottermore.com/bxd3o8b291gf/4KonItodO0UE44EYAySg46/24abcc9e548144d0c1be6e401d88281e/SortingHat_WB_F1_SortingHatAlone_Promo_100615_Land.jpg?w=1330&q=85"
           alt="Sorting hat"
         />
-      </div>
+      </div >
     );
   }
 
