@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-// import SweetAlert from 'sweetalert2-react';
 import Capitzalize from '../functions/Capitalize';
 
 class CharactersList extends React.Component {
@@ -17,7 +16,6 @@ class CharactersList extends React.Component {
   }
 
   getCharactersLists() {
-
     axios.get(`http://hp-api.herokuapp.com/api/characters`)
       .then(response => (response.data))
       .then(data => this.setState({ charactersList: data }))
@@ -34,6 +32,7 @@ class CharactersList extends React.Component {
               <div key={i}>
                 <img src={character.image} alt={character.name} />
                 <p>Nom :{character.name}</p>
+                <p>Age : {2019 - Number(character.yearOfBirth)} ans</p>
                 <p>Espèce : {character.species}</p>
                 <p>Maison : {character.house}</p>
                 <p>Genre : {character.gender}</p>
