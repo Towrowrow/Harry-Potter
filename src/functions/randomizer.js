@@ -4,4 +4,4 @@ function getRandomHouse() {
   return houses[number];
 }
 
-export default getRandomHouse
+export default getRandomHouse;
