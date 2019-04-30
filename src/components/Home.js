@@ -14,8 +14,8 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <CharactersList />
         <SortingHat />
+        <CharactersList />
       </div>
 
     );
