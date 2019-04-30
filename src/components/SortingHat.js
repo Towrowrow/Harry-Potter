@@ -19,6 +19,7 @@ class SortingHat extends React.Component {
     })
 
   render() {
+
     return (
       <div>
         <img
